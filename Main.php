@@ -46,7 +46,7 @@ $students = selectIDCard($pdo);
                         <p class="card-text">
                             Группа: <?php echo $student['Группа']; ?>
                         </p>
-                        <a href="./view.details.student.php" class="btn btn-primary">Подробнее</a>
+                        <a href="./view.details.student.php?id=<?php echo $student['id']; ?>" class="btn btn-primary">Подробнее</a>
                     </div>
                 </div>
             </div>

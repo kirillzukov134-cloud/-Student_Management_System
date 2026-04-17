@@ -50,9 +50,10 @@ function AdditionStudent($pdo, $data){
 }
 
 
-function ShowMoreDetails($pdo, $id){
+function ShowMoreDetails($pdo){
+    $id = $_GET['id'];
     $sql = 
-    "SELECT DISTINCT 
+    "SELECT 
         groups.name AS Группа, 
         students.Name_student AS Имя_студента, 
         students.Surname_student AS Фамилия_студента, 
@@ -62,6 +63,10 @@ function ShowMoreDetails($pdo, $id){
     FROM schedule JOIN groups ON schedule.group_id = groups.id 
     JOIN students ON students.id 
     WHERE students.id = :id
-    ";
+    LIMIT 1";
+
+    $statement = $pdo->prepare($sql);
+    $statement->execute(['id' => $id]);
+    return $statement->fetchAll(PDO::FETCH_ASSOC);
 }
 
