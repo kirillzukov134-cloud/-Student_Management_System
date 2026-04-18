@@ -18,13 +18,14 @@ return $results;
 
 //Вывод студентов в Main.php (card)
 function selectIDCard($pdo){
-    $sql = "SELECT 
-            students.id,
-            students.Name_student AS Имя_студента, 
-            students.Surname_student AS Фамилия_студента,
-            groups.name AS Группа
-        FROM students
-        JOIN groups ON students.group_id = groups.id";
+    $sql = 
+    "SELECT 
+        students.id,
+        students.Name_student AS Имя_студента, 
+        students.Surname_student AS Фамилия_студента,
+        groups.name AS Группа
+    FROM students
+    JOIN groups ON students.group_id = groups.id";
 
 $statement = $pdo->prepare($sql);
 $statement->execute();
@@ -70,3 +71,18 @@ function ShowMoreDetails($pdo){
     return $statement->fetchAll(PDO::FETCH_ASSOC);
 }
 
+function GradesStudent($pdo){
+    $id = $_GET['id'];
+    $sql = 
+    "SELECT 
+        grades.grades AS Оценка,
+        subjects.Name_subjects AS Предмет
+    FROM grades
+    JOIN students ON grades.student_id = students.id
+    JOIN subjects ON grades.subject_id = subjects.id
+    WHERE students.id = :id";
+    
+    $statement = $pdo->prepare($sql);
+    $statement->execute(['id' => $id]);
+    return $statement->fetchAll(PDO::FETCH_ASSOC);
+}
