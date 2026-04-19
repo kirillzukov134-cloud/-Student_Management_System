@@ -34,7 +34,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <body>
 <div class="container mt-4">
     <form method="post">
-        <h2>Добавление студентов</h2
+        <h2>Добавление студентов</h2>
         <fieldset>
             <legend>Персональные данные</legend>
             <div class="mb-3">

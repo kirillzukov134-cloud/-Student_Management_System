@@ -2,7 +2,7 @@
 require "./DataBase/connectDB.php";
 require "./functions/functions.php";
 
-$students = GradesStudent($pdo)
+$students = GradesStudent($pdo);
 ?>
 
 <!DOCTYPE html>

@@ -43,8 +43,8 @@ $studentResult = ShowMoreDetails($pdo);
                         <th class="bg-light">Навигационные кнопки:</th>
                         <td>
                             <a href="./Main.php" class="btn btn-success">Назад</a>
-                            <a href="./edit.details.php" class="btn btn-warning">Изменить</a>
-                            <a href="./Main.php" class="btn btn-danger">Удалить</a>
+                            <a href="./edit.details.php?id=<?php echo $student['id']; ?>" class="btn btn-warning">Изменить</a>
+                            <a href="./delete.student.php?id=<?php echo $student['id']; ?>" class="btn btn-danger">Удалить</a>
                         </td>
                     </tr>
                 </table>
