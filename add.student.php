@@ -32,9 +32,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <title>Добавление студентов</title>
 </head>
 <body>
-<div class="container mt-4">
+<div class="col-md-6 container mt-4 w-50 p-3 border border border-dark" style="background-color: #eee;">
     <form method="post">
-        <h2>Добавление студентов</h2>
+        <h2 class="text-center">Добавление студентов</h2>
         <fieldset>
             <legend>Персональные данные</legend>
             <div class="mb-3">

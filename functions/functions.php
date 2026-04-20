@@ -118,3 +118,8 @@ function DeleteStudent($pdo, $id){
     $statement = $pdo->prepare($sql);
     return $statement->execute(['id' => $id]);
 }
+
+
+function delete($pdo, $id){
+    $sql = '';
+}

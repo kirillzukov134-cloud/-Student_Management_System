@@ -24,7 +24,7 @@ $students = selectIDCard($pdo);
 </div>
 
 <!-- Навигационные кнопки -->
-<div class="d-flex justify-content-center gap-3 mb-4">
+<div class="d-flex justify-content-center gap-3 mb-4 ">
     <a href="view.all.students.php" class="btn btn-secondary btn-lg">
         Просмотреть список студентов
     </a>
@@ -36,7 +36,9 @@ $students = selectIDCard($pdo);
     </a>
 </div>
 
-<div class="container mt-4">
+
+
+<div class="container mt-4"> 
     <div class="row justify-content-center">
         <?php foreach($students as $student): ?>
             <div class="col-md-4 mb-3 d-flex justify-content-center">
@@ -56,3 +58,4 @@ $students = selectIDCard($pdo);
 </div>
 </body>
 </html>
+<!-- class="container mt-4 w-50 p-3 border" style="background-color: #eee;" -->

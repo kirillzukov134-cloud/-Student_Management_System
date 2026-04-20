@@ -14,7 +14,7 @@ $students = selectFullStudents($pdo);
     <title>Список всех студентов</title>
 </head>
 <body>
-    <div class="container mt-4">
+    <div class="col-md-6 container mt-4 w-50 p-3 border border border-dark" style="background-color: #eee;">
         <div class="text-center">
             <h2>Список всех студентов</h2>
             <table class="table table-bordered table-striped", style="border: 5px;">
@@ -35,7 +35,8 @@ $students = selectFullStudents($pdo);
                     <?php endforeach;?>
                 </tbody>
             </table>
-                <a href="./Main.php" class="btn btn-success ">Назад</a>
+                <a href="./Main.php" class="btn btn-primary">Назад</a>
+                <a href="#" class="btn btn-danger">Удалить</a>
         </div>
     </div>
 </body>

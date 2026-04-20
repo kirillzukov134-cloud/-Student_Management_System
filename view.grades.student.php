@@ -14,7 +14,7 @@ $students = GradesStudent($pdo);
     <title>Document</title>
 </head>
 <body>
-    <div class="container mt-4">
+    <div class="container mt-4 w-50 p-3 border border border-dark" style="background-color: #eee;">
         <div class="text-center">
             <legend><b><h1>Все оценки студента</h1></b></legend>
             <table class="table table-bordered table-striped", style="border: 5px;">
@@ -22,6 +22,8 @@ $students = GradesStudent($pdo);
                     <tr>
                         <th>Оценка</th>
                         <th>Предмет</th>
+                        <!-- <th>Дата добавления</th> -->
+                        <th>Кнопка удаления</th>
                     </tr>                        
                 </thead>
                 <tbody>
@@ -29,11 +31,16 @@ $students = GradesStudent($pdo);
                     <tr>
                         <td><?php echo $student['Оценка']?></td>
                         <td><?php echo $student['Предмет']?></td>
+                        <td>
+                            <a href="./delete.grade.php" class="btn btn-danger">Удалить</a>  
+                        </td>
                     </tr>
                     <?php endforeach; ?>
                 </tbody>
             </table>
-                <a href="./Main.php" class="btn btn-success">Назад</a>
+                <a href="./Main.php" class="btn btn-primary">Назад</a>
+                <a href="#" class="btn btn-success">Добавить оценку</a>
+                <a href="./edit.grade.php" class="btn btn-warning">Редактировать</a>              
         </div>
     </div>
 </body>

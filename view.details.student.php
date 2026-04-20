@@ -14,10 +14,10 @@ $studentResult = ShowMoreDetails($pdo);
     <title>Подробный просмотр студента</title>
 </head>
 <body>
-    <div class="card mb-3" style="max-width: 600px;">
+    <div class="container mt-3 w-50 p-4 border border border-dark" style="background-color: #eee;">
         <?php foreach($studentResult as $student): ?>
             <div class="card-header bg-success text-white">
-                <h5>
+                <h5 class="text-center">
                     <?php echo $student['Имя_студента'] . ' ' . $student['Фамилия_студента']; ?>
                 </h5>
             </div>

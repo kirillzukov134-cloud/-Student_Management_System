@@ -40,11 +40,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <title>Форма редактирования студента</title>
 </head>
 <body>
-<div class="container mt-4">
-    <div class="row justify-content-center">
-        <div class="col-md-6">
+<div class="container mt-4 w-50 p-3 border border border-dark" style="background-color: #eee;">
             <form method="post">
-                <h2 class="text-center">Редактирование студента</h2>
+                <h2 class="text-center">Редактирование данных студента</h2>
                 <fieldset>
                     <legend>Персональные данные</legend>
                     <div class="mb-3">
@@ -83,7 +81,5 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 </div>
             </form>
         </div>
-    </div>
-</div>
 </body>
 </html>
