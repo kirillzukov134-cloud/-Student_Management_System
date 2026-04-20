@@ -24,20 +24,21 @@ $students = selectIDCard($pdo);
 </div>
 
 <!-- Навигационные кнопки -->
-<div class="d-flex justify-content-center gap-3 mb-4 ">
-    <a href="view.all.students.php" class="btn btn-secondary btn-lg">
-        Просмотреть список студентов
-    </a>
-    <a href="./add.student.php" class="btn btn-success btn-lg">
-        Добавить студента
-    </a>
-        <!-- <a href="#" class="btn btn-primary btn-lg">
-        Просмотр всех студентов -->
-    </a>
+<div class="d-flex justify-content-center gap-3 mb-4 " style="padding: 3px;">
+    <nav id="navbar-example2" class="navbar bg-body-tertiary px-3 mb-3">
+        <a href="view.all.students.php" class="btn btn-secondary btn-lg">
+            Просмотреть список студентов
+        </a>
+        <a href="./add.student.php" class="btn btn-success btn-lg">
+            Добавить студента
+        </a>
+            <a href="#" class="btn btn-info btn-lg">
+            Список всех предметов
+        </a>
+    </nav>
 </div>
 
-
-
+<!-- Карточки студентов -->
 <div class="container mt-4"> 
     <div class="row justify-content-center">
         <?php foreach($students as $student): ?>
@@ -56,6 +57,26 @@ $students = selectIDCard($pdo);
         <?php endforeach; ?>
     </div>    
 </div>
+
+<!-- Нижний колонтитул с контактными данными -->
+<footer class="border-end">
+    <div class="container mt-3 col-md-4 position-absolute bottom-0 start-50 translate-middle-x">
+        <div class="row">
+            <div class="col-md-6">
+                <ul class="list-unstyled d-flex gap-3 mb-2">
+                    <li><a href="#" class="text-decoration-none text-muted">Подробная информация о проекте</a></li>
+                </ul>
+                <p class="text-muted small">&copy; 2026 StudentProject</p>
+            </div>
+            <div class="col-md-6 text-md-end">
+                <p class="mb-0">Телефон: +7 (999) 645-79-59</p>
+                <p>Email: <a href="kirillzukov134@gmail.com">kirillzukov134@gmail.com</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
 </body>
 </html>
+
+<!-- Подсказка -->
 <!-- class="container mt-4 w-50 p-3 border" style="background-color: #eee;" -->
