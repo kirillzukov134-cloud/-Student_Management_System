@@ -51,6 +51,17 @@ function AdditionStudent($pdo, $data){
     return $statement->execute($data);
 }
 
+//Функция которая добавляет предмет
+function AdditionSubjects($pdo, $data){
+    $data = [
+        "Name_Subjects"=> $_POST["Name_Subjects"],
+    ];
+    
+    $sql = "INSERT INTO `subjects`(`Name_subjects`) VALUES (:Name_Subjects)";
+    $statement = $pdo->prepare($sql);
+    return $statement->execute($data);
+}
+
 //Функциия для подробной информации о студенте
 function ShowMoreDetails($pdo){
     $id = $_GET['id'];
@@ -120,6 +131,10 @@ function DeleteStudent($pdo, $id){
 }
 
 
-function delete($pdo, $id){
-    $sql = '';
+//Функция которая выводит все предметы
+function getAllSubjects($pdo){
+    $sql = 'SELECT id, Name_subjects FROM subjects';
+    $statement = $pdo->prepare($sql);
+    $statement->execute();
+    return $statement->fetchAll(PDO::FETCH_ASSOC);
 }

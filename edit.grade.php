@@ -40,7 +40,7 @@
     <title>Форма редактирования оценки</title>
 </head>
 <body>
-<div class="container mt-4 w-50 p-3 border border border-dark" style="background-color: #eee;">
+<div class="container mt-4 w-50 p-3 border border-dark" style="background-color: #eee;">
     <form method="post">
         <h2 class="text-center">Редактирование оценки</h2>
         <fieldset>

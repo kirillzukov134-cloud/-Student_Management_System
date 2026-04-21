@@ -32,7 +32,7 @@ $students = selectIDCard($pdo);
         <a href="./add.student.php" class="btn btn-success btn-lg">
             Добавить студента
         </a>
-            <a href="#" class="btn btn-info btn-lg">
+            <a href="./list_subjects.php" class="btn btn-info btn-lg">
             Список всех предметов
         </a>
     </nav>

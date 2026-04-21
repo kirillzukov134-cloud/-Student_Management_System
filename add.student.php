@@ -35,7 +35,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <div class="col-md-6 container mt-4 w-50 p-3 border border border-dark" style="background-color: #eee;">
     <form method="post">
         <h2 class="text-center">Добавление студентов</h2>
-        <fieldset>
             <legend>Персональные данные</legend>
             <div class="mb-3">
                 <label for="name" class="form-label">Имя:</label>
@@ -53,19 +52,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <label for="birth" class="form-label">Дата рождения:</label>
                 <input type="date" name="birth_date" class="form-control" required>
             </div>
-        </fieldset>
-        <fieldset>
-            <legend>Контакты</legend>
-            <div class="mb-3">
-                <label for="email" class="form-label">E-mail:*</label>
-                <input type="email" name="email" class="form-control" required>
-            </div>
-            <div class="mb-3">
-                <label for="phone" class="form-label">Телефон:*</label>
-                <input type="tel" name="phone" class="form-control" required>
-            </div>
-        </fieldset>
-        
+                <legend>Контакты</legend>
+                <div class="mb-3">
+                    <label for="email" class="form-label">E-mail:*</label>
+                    <input type="email" name="email" class="form-control" required>
+                </div>
+                <div class="mb-3">
+                    <label for="phone" class="form-label">Телефон:*</label>
+                    <input type="tel" name="phone" class="form-control" required>
+                </div>
         <button type="submit" class="btn btn-success">Добавить</button>
         <button type="reset" class="btn btn-secondary">Сбросить</button>
         <a href="./Main.php" class="btn btn-primary">Назад</a>
