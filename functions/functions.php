@@ -4,16 +4,17 @@
 function selectFullStudents($pdo){
     $sql =
     "SELECT 
-    groups.name AS Группа,
-    students.Name_student AS Имя_студента,
-    students.Surname_student AS Фамилия_студента
-FROM students
-JOIN groups ON students.group_id = groups.id";
+        students.id,
+        groups.name AS group_name,
+        students.Name_student AS first_name,
+        students.Surname_student AS last_name
+    FROM students
+    JOIN groups ON students.group_id = groups.id";
 
-$statement = $pdo->prepare($sql);
-$statement->execute();
-$results = $statement->fetchAll(PDO::FETCH_ASSOC);
-return $results;
+    $statement = $pdo->prepare($sql);
+    $statement->execute();
+    $results = $statement->fetchAll(PDO::FETCH_ASSOC);
+    return $results;
 }
 
 //Вывод студентов в Main.php (card)
@@ -21,16 +22,16 @@ function selectIDCard($pdo){
     $sql = 
     "SELECT 
         students.id,
-        students.Name_student AS Имя_студента, 
-        students.Surname_student AS Фамилия_студента,
-        groups.name AS Группа
+        students.Name_student AS first_name, 
+        students.Surname_student AS last_name,
+        groups.name AS group_name
     FROM students
     JOIN groups ON students.group_id = groups.id";
 
-$statement = $pdo->prepare($sql);
-$statement->execute();
-$students = $statement->fetchAll(PDO::FETCH_ASSOC);
-return $students;
+    $statement = $pdo->prepare($sql);
+    $statement->execute();
+    $students = $statement->fetchAll(PDO::FETCH_ASSOC);
+    return $students;
 }
 
 //Добавление студентов в add.view.student.php
@@ -62,17 +63,30 @@ function AdditionSubjects($pdo, $data){
     return $statement->execute($data);
 }
 
+// Добавить оценку
+function AdditionGrade($pdo, $data) {
+    $sql = "INSERT INTO `grades` (`grade`, `student_id`, `subject_id`) 
+            VALUES (:grade, :student_id, :subject_id)";
+    
+    $statement = $pdo->prepare($sql);
+    return $statement->execute([
+        ':grade' => $data['grade'],
+        ':student_id' => $data['student_id'],
+        ':subject_id' => $data['subject_id']
+    ]);
+}
+
 //Функциия для подробной информации о студенте
 function ShowMoreDetails($pdo){
     $id = $_GET['id'];
     $sql = "SELECT 
         students.id,
-        groups.name AS Группа, 
-        students.Name_student AS Имя_студента, 
-        students.Surname_student AS Фамилия_студента, 
-        students.phone AS Номер_телефона, 
-        students.email AS Почта, 
-        students.birth_date AS День_рождения 
+        groups.name AS group_name, 
+        students.Name_student AS first_name, 
+        students.Surname_student AS last_name, 
+        students.phone AS phone, 
+        students.email AS email, 
+        students.birth_date AS birth_date 
     FROM students
     JOIN groups ON students.group_id = groups.id 
     WHERE students.id = :id";
@@ -83,20 +97,27 @@ function ShowMoreDetails($pdo){
 }
 
 //Функция для получения всех оценок студента по всем предметам
-function GradesStudent($pdo){
-    $id = $_GET['id'];
-    $sql = 
-    "SELECT 
-        grades.grade AS Оценка,
-        subjects.Name_subjects AS Предмет
-    FROM grades
-    JOIN students ON grades.student_id = students.id
-    JOIN subjects ON grades.subject_id = subjects.id
-    WHERE students.id = :id";
+function GradesStudent($pdo, $student_id){
+    $sql = "SELECT 
+                grades.id as grade_id,
+                grades.grade AS Оценка,
+                subjects.Name_subjects AS Предмет
+            FROM grades
+            JOIN subjects ON grades.subject_id = subjects.id
+            WHERE grades.student_id = :student_id
+            ORDER BY subjects.Name_subjects";
     
     $statement = $pdo->prepare($sql);
-    $statement->execute(['id' => $id]);
+    $statement->execute(['student_id' => $student_id]);
     return $statement->fetchAll(PDO::FETCH_ASSOC);
+}
+
+// Получить оценку по ID
+function getGradeById($pdo, $id) {
+    $sql = "SELECT * FROM grades WHERE id = :id";
+    $statement = $pdo->prepare($sql);
+    $statement->execute([':id' => $id]);
+    return $statement->fetch(PDO::FETCH_ASSOC);
 }
 
 //Функция для получения данных одного студента в edit.details.php
@@ -130,6 +151,18 @@ function DeleteStudent($pdo, $id){
     return $statement->execute(['id' => $id]);
 }
 
+function DeleteSubject($pdo, $id){
+    $sql = "DELETE FROM `subjects` WHERE id = :id";
+    $statement = $pdo->prepare($sql);
+    return $statement->execute(['id' => $id]);    
+}
+
+function DeleteGrade($pdo, $id){
+    $sql = "DELETE FROM `grades` WHERE id = :id";
+    $statement = $pdo->prepare($sql);
+    return $statement->execute(['id' => $id]);    
+}
+
 
 //Функция которая выводит все предметы
 function getAllSubjects($pdo){
@@ -137,4 +170,67 @@ function getAllSubjects($pdo){
     $statement = $pdo->prepare($sql);
     $statement->execute();
     return $statement->fetchAll(PDO::FETCH_ASSOC);
+}
+
+// Получить предмет по ID
+function getSubjectById($pdo, $id) {
+    $sql = "SELECT * FROM subjects WHERE id = :id";
+    $stmt = $pdo->prepare($sql);
+    $stmt->execute([':id' => $id]);
+    return $stmt->fetch(PDO::FETCH_ASSOC);
+}
+
+// Обновить предмет
+function EditSubject($pdo, $data) {
+    $sql = "UPDATE subjects SET Name_subjects = :Name_Subjects WHERE id = :id";
+    $statement = $pdo->prepare($sql);
+    return $statement->execute([
+        ':Name_Subjects' => $data['Name_Subjects'],
+        ':id' => $data['id']
+    ]);
+}
+
+// Получить всех студентов с группами
+function getAllStudents($pdo) {
+    $sql = "SELECT 
+                students.*,
+                groups.name AS group_name
+            FROM students
+            JOIN groups ON students.group_id = groups.id
+            ORDER BY students.Surname_student";
+    
+    $statement = $pdo->prepare($sql);
+    $statement->execute();
+    return $statement->fetchAll(PDO::FETCH_ASSOC);
+}
+
+// Добавить оценку
+function AddGrade($pdo, $data) {
+    $sql = "INSERT INTO `grades` (`grade`, `student_id`, `subject_id`) 
+            VALUES (:grade, :student_id, :subject_id)";
+    
+    $statement = $pdo->prepare($sql);
+    return $statement->execute([
+        ':grade' => $data['grade'],
+        ':student_id' => $data['student_id'],
+        ':subject_id' => $data['subject_id']
+    ]);
+}
+
+
+// Обновить оценку
+function EditGrade($pdo, $data) {
+    $sql = "UPDATE `grades` SET 
+                `grade` = :grade,
+                `student_id` = :student_id,
+                `subject_id` = :subject_id
+            WHERE `id` = :id";
+    
+    $statement = $pdo->prepare($sql);
+    return $statement->execute([
+        ':grade' => $data['grade'],
+        ':student_id' => $data['student_id'],
+        ':subject_id' => $data['subject_id'],
+        ':id' => $data['id']
+    ]);
 }

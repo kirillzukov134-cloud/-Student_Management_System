@@ -1,7 +1,6 @@
 <?php
-require "./DataBase/connectDB.php";
-require "./functions/functions.php";
-
+require "../DataBase/connectDB.php";
+require "../Functions/functions.php";
 //Получаем ID студента
 $id = $_GET['id'];
 
@@ -25,7 +24,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     
 //Если все успешно изменилось, перекидывает к карточке студента с подробной информацией
     if ($result) {
-        header('Location: ./view.details.student.php?id=' . $id);
+        header('Location: ../Views/view.details.student.php?id=' . $id);
         exit;
     }
 }
@@ -77,7 +76,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 
                 <div class="d-flex gap-2 mt-3">
                     <button type="submit" class="btn btn-primary">Сохранить</button>
-                    <a href="./view.details.student.php?id=<?php echo $id; ?>" class="btn btn-success">Назад</a>
+                    <a href="../Views/view.details.student.php?id=<?php echo $id; ?>" class="btn btn-success">Назад</a>
                 </div>
             </form>
         </div>

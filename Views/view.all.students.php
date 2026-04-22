@@ -1,6 +1,6 @@
 <?php
-require "./DataBase/connectDB.php";
-require "./functions/functions.php";
+require "../DataBase/connectDB.php";
+require "../Functions/functions.php";
 
 $students = selectFullStudents($pdo);
 ?>
@@ -20,7 +20,6 @@ $students = selectFullStudents($pdo);
             <table class="table table-bordered table-striped", style="border: 5px;">
                 <thead class="table-dark">
                     <tr>
-                        <!-- <th>Группа</th> -->
                         <th>Имя_студента</th>
                         <th>Фамилия_студента</th>
                     </tr>
@@ -28,15 +27,13 @@ $students = selectFullStudents($pdo);
                 <tbody>
                     <?php foreach($students as $student): ?>
                     <tr>
-                        <!-- <td><?php echo $student['Группа'] ?></td> -->
-                        <td><?php echo $student['Имя_студента']?></td>
-                        <td><?php echo $student['Фамилия_студента']?></td>
+                        <td><?php echo $student['first_name']; ?></td>
+                        <td><?php echo $student['last_name']; ?></td>
                     </tr>
                     <?php endforeach;?>
                 </tbody>
             </table>
-                <a href="./Main.php" class="btn btn-primary">Назад</a>
-                <a href="#" class="btn btn-danger">Удалить</a>
+                <a href="../index.php" class="btn btn-primary">Назад</a>
         </div>
     </div>
 </body>

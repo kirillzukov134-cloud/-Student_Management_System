@@ -1,6 +1,6 @@
 <?php
-require "./DataBase/connectDB.php";
-require "./functions/functions.php";
+require "../DataBase/connectDB.php";
+require "../functions/functions.php";
 
 if($_SERVER['REQUEST_METHOD'] === 'POST'){
     $data = [
@@ -10,7 +10,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
     $result =  AdditionSubjects($pdo, $data);
 
     if($result){
-        header('Location: ./list_subjects.php');
+        header('Location: ../Views/views_list_subjects.php');
         exit;
     }else {
         echo 'Ошибка при добавлении предмета';
@@ -29,7 +29,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
 </head>
 <body>
     <div class="container mt-4 w-50 p-3 border border border-dark" style="background-color: #eee;">
-        <form action="post">
+        <form method="post">
             <h2 class="text-center">Добавление предмета</h2>
                 <div class="mb-3">
                     <label for="name" class="form-label">Название предмета</label>
@@ -38,7 +38,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
                 <div class="text-center">
                     <button type="submit" class="btn btn-success">Добавить</button>
                     <button type="reset" class="btn btn-secondary">Сбросить</button>
-                    <a href="./Main.php" class="btn btn-primary"> Назад</a>
+                    <a href="../index.php" class="btn btn-primary"> Назад</a>
                 </div>
         </form>
     </div>

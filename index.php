@@ -1,6 +1,6 @@
 <?php
 require "./DataBase/connectDB.php";
-require "./functions/functions.php";
+require "./Functions/functions.php";
 
 $students = selectIDCard($pdo);
 ?>
@@ -26,13 +26,13 @@ $students = selectIDCard($pdo);
 <!-- Навигационные кнопки -->
 <div class="d-flex justify-content-center gap-3 mb-4 " style="padding: 3px;">
     <nav id="navbar-example2" class="navbar bg-body-tertiary px-3 mb-3">
-        <a href="view.all.students.php" class="btn btn-secondary btn-lg">
+        <a href="./Views/view.all.students.php" class="btn btn-secondary btn-lg">
             Просмотреть список студентов
         </a>
-        <a href="./add.student.php" class="btn btn-success btn-lg">
+        <a href="./Adds/add.student.php" class="btn btn-success btn-lg">
             Добавить студента
         </a>
-            <a href="./list_subjects.php" class="btn btn-info btn-lg">
+            <a href="./Views/views_list_subjects.php" class="btn btn-info btn-lg">
             Список всех предметов
         </a>
     </nav>
@@ -45,12 +45,12 @@ $students = selectIDCard($pdo);
             <div class="col-md-4 mb-3 d-flex justify-content-center">
                 <div class="card" style="width: 15rem;">
                     <div class="card-body">
-                        <h5 class="card-title"><?php echo $student['Имя_студента'] . ' ' . $student['Фамилия_студента']; ?></h5>
+                        <h5 class="card-title"><?php echo $student['first_name'] . ' ' . $student['last_name']; ?></h5>
                         <p class="card-text">
-                            Группа: <?php echo $student['Группа']; ?>
+                            <p class="card-text">Группа: <?php echo $student['group_name']; ?></p>
                         </p>
-                            <a href="./view.details.student.php?id=<?php echo $student['id']; ?>" class="btn btn-primary">Подробнее</a>
-                            <a href="./view.grades.student.php?id=<?php echo $student['id']; ?>" class="btn btn-primary">Оценки</a>                            
+                            <a href="./Views/view.details.student.php?id=<?php echo $student['id']; ?>" class="btn btn-primary">Подробнее</a>
+                            <a href="./Views/view.grades.student.php?id=<?php echo $student['id']; ?>" class="btn btn-primary">Оценки</a>                            
                     </div>
                 </div>
             </div>

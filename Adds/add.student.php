@@ -1,6 +1,6 @@
 <?php
-require "./DataBase/connectDB.php";
-require "./functions/functions.php";
+require "../DataBase/connectDB.php";
+require "../Functions/functions.php";
 
 // Обработка отправки формы
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -16,7 +16,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $result = AdditionStudent($pdo, $data);
 
     if ($result) {
-        header('Location: ./Main.php');
+        header('Location: ../index.php');
         exit;
     }else {
         echo 'Ошибка при добавлении...';
@@ -63,7 +63,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 </div>
         <button type="submit" class="btn btn-success">Добавить</button>
         <button type="reset" class="btn btn-secondary">Сбросить</button>
-        <a href="./Main.php" class="btn btn-primary">Назад</a>
+        <a href="../index.php" class="btn btn-primary">Назад</a>
     </form>
 </div>
 </body>

@@ -1,6 +1,6 @@
 <?php
-require "./DataBase/connectDB.php";
-require "./functions/functions.php";
+require "../DataBase/connectDB.php";
+require "../Functions/functions.php";
 
 $students = getAllSubjects($pdo);
 ?>
@@ -31,15 +31,15 @@ $students = getAllSubjects($pdo);
                         <th><?php echo $student['id'] ?></th>
                         <th><?php echo $student['Name_subjects'] ?></th>
                         <th>
-                            <a href="#" class="btn btn-danger">Удалить</a>
+                            <a href="../Deletes/delete.subject.php?id=<?php echo $student['id']; ?>" class="btn btn-danger">Удалить</a>
+                            <a href="../Edits/edit.subjects.php?id=<?php echo $student['id']; ?>" class="btn btn-warning">Изменить</a>
                         </th>
                     </tr>
                     <?php endforeach; ?>
                 </tbody>
             </table>
-                <a href="./add.subjects.php" class="btn btn-success">Добавить предмет</a>
-                <a href="#" class="btn btn-warning">Изменить предмет</a>
-                <a href="./Main.php" class="btn btn-primary">Назад</a>
+                <a href="../Adds/add.subjects.php" class="btn btn-success">Добавить предмет</a>
+                <a href="../index.php" class="btn btn-primary">Назад</a>
         </div>
     </div>
 </body>
