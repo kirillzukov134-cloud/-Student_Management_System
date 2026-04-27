@@ -28,9 +28,10 @@
 - Bootstrap 5
 - HTML / CSS
 
-## ⚙️ Установка и запуск
+##  Установка и запуск
 
 ### 1. Клонировать репозиторий
+
 ```bash
 git clone https://github.com/ваш-логин/Student_Management_System.git
 ##Установка и запуск
