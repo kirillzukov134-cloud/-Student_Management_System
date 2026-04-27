@@ -61,4 +61,4 @@ $pdo->exec("SET NAMES utf8mb4");
 ## Автор
 
 **Кирилл Жуков**  
-GitHub: [@kirilizukov134-cloud](https://github.com/kirilizukov134-cloud)
+GitHub: [https://github.com/kirillzukov134-cloud]
