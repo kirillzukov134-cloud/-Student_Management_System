@@ -34,10 +34,8 @@
 
 ```bash
 git clone https://github.com/ваш-логин/Student_Management_System.git
-##Установка и запуск
-**1.Клонировать репозиторий**
 ```
-git clone https://github.com/ваш-логин/Student_Management_System.git
+
 ```
 **2.Настроить подключение к БД**
 -Создайте файл DataBase/connectDB.php (или исправьте существующий) с корректными параметрами:
