@@ -35,12 +35,11 @@
 ```bash
 git clone https://github.com/ваш-логин/Student_Management_System.git
 ```
-
-```
 **2.Настроить подключение к БД**
+```bash
 -Создайте файл DataBase/connectDB.php (или исправьте существующий) с корректными параметрами:
 ```
-<?php
+```<?php
 $pdo = new PDO('mysql:host=localhost;dbname=Students_Projects', 'root', '');
 $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 $pdo->exec("SET NAMES utf8mb4");
@@ -48,7 +47,7 @@ $pdo->exec("SET NAMES utf8mb4");
 **3.Импортировать SQL-схему в вашу базу данных Students_Projects**
 **4.Разместить проект на сервере (например, OpenServer**
 **5.Открыть в браузере**
-##Планы по улучшению
+## Планы по улучшению
 -Создать нормальный index.php со списком студентов
 -Добавить валидацию и защиту от SQL-инъекций
 -Добавить стили и скрипты в отдельные файлы
