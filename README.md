@@ -67,8 +67,8 @@ $pdo->exec("SET NAMES utf8mb4");
 ### 3.Импортировать SQL-схему в вашу базу данных Students_Projects
 ### 4.Разместить проект на сервере (например, OpenServer)
 ### 5.Открыть в браузере
-### Готово!
+### 6.Готово!
 
-## Автор: Кирилл Жуков
-## GitHub: [https://github.com/kirillzukov134-cloud]
+# Автор: Кирилл Жуков
+# GitHub: [https://github.com/kirillzukov134-cloud]
 
