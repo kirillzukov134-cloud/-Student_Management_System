@@ -69,6 +69,6 @@ $pdo->exec("SET NAMES utf8mb4");
 ### 5.Открыть в браузере
 ### Готово!
 
-##**Автор: Кирилл Жуков**
-##**GitHub: [https://github.com/kirillzukov134-cloud]**
+## Автор: Кирилл Жуков
+## GitHub: [https://github.com/kirillzukov134-cloud]
 
