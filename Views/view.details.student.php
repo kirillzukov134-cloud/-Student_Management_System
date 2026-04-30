@@ -18,33 +18,33 @@ $studentResult = ShowMoreDetails($pdo);
         <?php foreach($studentResult as $student): ?>
             <div class="card-header bg-success text-white">
                 <h5 class="text-center">
-                    <?php echo $student['last_name'] . ' ' . $student['first_name']; ?>
+                    <?php echo htmlspecialchars($student['last_name']) . ' ' . htmlspecialchars($student['first_name']); ?>
                 </h5>
             </div>
             <div class="card-body p-0">
                 <table class="table table-hover">
                     <tr>
                         <th class="bg-light">Группа:</th>
-                        <td><?php echo $student['group_name']; ?></td>
+                        <td><?php echo htmlspecialchars($student['group_name']); ?></td>
                     </tr>
                     <tr>
                         <th class="bg-light">Номер телефона:</th>
-                        <td><?php echo $student['phone']; ?></td>
+                        <td><?php echo htmlspecialchars($student['phone']); ?></td>
                     </tr>
                     <tr>
                         <th class="bg-light">Почта:</th>
-                        <td><?php echo $student['email']; ?></td>
+                        <td><?php echo htmlspecialchars($student['email']); ?></td>
                     </tr>
                     <tr>
                         <th class="bg-light">День рождения:</th>
-                        <td><?php echo $student['birth_date']; ?></td>
+                        <td><?php echo htmlspecialchars($student['birth_date']); ?></td>
                     </tr>
                     <tr>
                         <th class="bg-light">Навигационные кнопки:</th>
                         <td>
                             <a href="../index.php" class="btn btn-success">Назад</a>
-                            <a href="../Edits/edit.details.php?id=<?php echo $student['id']; ?>" class="btn btn-warning">Изменить</a>
-                            <a href="../Deletes/delete.student.php?id=<?php echo $student['id']; ?>" class="btn btn-danger">Удалить</a>
+                            <a href="../Edits/edit.details.php?id=<?php echo htmlspecialchars($student['id']); ?>" class="btn btn-warning">Изменить</a>
+                            <a href="../Deletes/delete.student.php?id=<?php echo htmlspecialchars($student['id']); ?>" class="btn btn-danger">Удалить</a>
                         </td>
                     </tr>
                 </table>

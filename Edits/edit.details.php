@@ -46,19 +46,19 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     <legend>Персональные данные</legend>
                     <div class="mb-3">
                         <label for="name" class="form-label">Имя:</label>
-                        <input type="text" name="Name_student" class="form-control" value="<?php echo $student['Name_student']; ?>" required>
+                        <input type="text" name="Name_student" class="form-control" value="<?php echo htmlspecialchars($student['Name_student']); ?>" required>
                     </div>
                     <div class="mb-3">
                         <label for="surname" class="form-label">Фамилия:</label>
-                        <input type="text" name="Surname_student" class="form-control" value="<?php echo $student['Surname_student']; ?>" required>
+                        <input type="text" name="Surname_student" class="form-control" value="<?php echo htmlspecialchars($student['Surname_student']); ?>" required>
                     </div>
                     <div class="mb-3">
                         <label for="group" class="form-label">Группа (ID):</label>
-                        <input type="number" name="group_id" class="form-control" value="<?php echo $student['group_id']; ?>" required>
+                        <input type="number" name="group_id" class="form-control" value="<?php echo htmlspecialchars($student['group_id']); ?>" required>
                     </div>
                     <div class="mb-3">
                         <label for="birth" class="form-label">Дата рождения:</label>
-                        <input type="date" name="birth_date" class="form-control" value="<?php echo $student['birth_date']; ?>" required>
+                        <input type="date" name="birth_date" class="form-control" value="<?php echo htmlspecialchars($student['birth_date']); ?>" required>
                     </div>
                 </fieldset>
                 
@@ -66,11 +66,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     <legend>Контакты</legend>
                     <div class="mb-3">
                         <label for="email" class="form-label">E-mail:</label>
-                        <input type="email" name="email" class="form-control" value="<?php echo $student['email']; ?>" required>
+                        <input type="email" name="email" class="form-control" value="<?php echo htmlspecialchars($student['email']); ?>" required>
                     </div>
                     <div class="mb-3">
                         <label for="phone" class="form-label">Телефон:</label>
-                        <input type="tel" name="phone" class="form-control" value="<?php echo $student['phone']; ?>" required>
+                        <input type="tel" name="phone" class="form-control" value="<?php echo htmlspecialchars($student['phone']); ?>" required>
                     </div>        
                 </fieldset>
                 

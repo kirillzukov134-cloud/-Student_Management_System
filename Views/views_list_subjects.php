@@ -28,11 +28,11 @@ $students = getAllSubjects($pdo);
                 <tbody>
                     <?php foreach($students as $student): ?>
                     <tr>
-                        <th><?php echo $student['id'] ?></th>
-                        <th><?php echo $student['Name_subjects'] ?></th>
+                        <th><?php echo htmlspecialchars($student['id']); ?></th>
+                        <th><?php echo htmlspecialchars($student['Name_subjects']); ?></th>
                         <th>
-                            <a href="../Deletes/delete.subject.php?id=<?php echo $student['id']; ?>" class="btn btn-danger">Удалить</a>
-                            <a href="../Edits/edit.subjects.php?id=<?php echo $student['id']; ?>" class="btn btn-warning">Изменить</a>
+                            <a href="../Deletes/delete.subject.php?id=<?php echo htmlspecialchars($student['id']); ?>" class="btn btn-danger">Удалить</a>
+                            <a href="../Edits/edit.subjects.php?id=<?php echo htmlspecialchars($student['id']); ?>" class="btn btn-warning">Изменить</a>
                         </th>
                     </tr>
                     <?php endforeach; ?>

@@ -27,8 +27,8 @@ $students = selectFullStudents($pdo);
                 <tbody>
                     <?php foreach($students as $student): ?>
                     <tr>
-                        <td><?php echo $student['first_name']; ?></td>
-                        <td><?php echo $student['last_name']; ?></td>
+                        <td><?php echo htmlspecialchars($student['first_name']); ?></td>
+                        <td><?php echo htmlspecialchars($student['last_name']); ?></td>
                     </tr>
                     <?php endforeach;?>
                 </tbody>

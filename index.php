@@ -45,12 +45,12 @@ $students = selectIDCard($pdo);
             <div class="col-md-4 mb-3 d-flex justify-content-center">
                 <div class="card" style="width: 15rem;">
                     <div class="card-body">
-                        <h5 class="card-title"><?php echo $student['first_name'] . ' ' . $student['last_name']; ?></h5>
+                        <h5 class="card-title"><?php echo htmlspecialchars($student['first_name']) . ' ' . htmlspecialchars($student['last_name']); ?></h5>
                         <p class="card-text">
-                            <p class="card-text">Группа: <?php echo $student['group_name']; ?></p>
+                            <p class="card-text">Группа: <?php echo htmlspecialchars($student['group_name']); ?></p>
                         </p>
-                            <a href="./Views/view.details.student.php?id=<?php echo $student['id']; ?>" class="btn btn-primary">Подробнее</a>
-                            <a href="./Views/view.grades.student.php?id=<?php echo $student['id']; ?>" class="btn btn-primary">Оценки</a>                            
+                            <a href="./Views/view.details.student.php?id=<?php echo htmlspecialchars($student['id']); ?>" class="btn btn-primary">Подробнее</a>
+                            <a href="./Views/view.grades.student.php?id=<?php echo htmlspecialchars($student['id']); ?>" class="btn btn-primary">Оценки</a>                            
                     </div>
                 </div>
             </div>

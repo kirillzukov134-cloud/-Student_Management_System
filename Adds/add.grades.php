@@ -45,8 +45,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     <option value="">-- Выберите студента --</option>
                     <?php foreach($students as $student): ?>
                         <option value="<?php echo $student['id']; ?>">
-                            <?php echo $student['Name_student'] . ' ' . $student['Surname_student']; ?>
-                            (<?php echo $student['group_name']; ?>)
+                            <?php echo htmlspecialchars($student['Name_student'] . ' ' . $student['Surname_student']); ?>
+                            <?php echo htmlspecialchars($student['group_name']); ?>
                         </option>
                     <?php endforeach; ?>
                 </select>
@@ -58,8 +58,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <select name="subject_id" class="form-select" required>
                     <option value="">-- Выберите предмет --</option>
                     <?php foreach($subjects as $subject): ?>
-                        <option value="<?php echo $subject['id']; ?>">
-                            <?php echo $subject['Name_subjects']; ?>
+                        <option value="<?php echo htmlspecialchars($subject['id']); ?>">
+                            <?php echo htmlspecialchars($subject['Name_subjects']); ?>
                         </option>
                     <?php endforeach; ?>
                 </select>

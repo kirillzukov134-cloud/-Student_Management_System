@@ -51,10 +51,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <select name="student_id" class="form-select" required>
                     <option value="">-- Выберите студента --</option>
                     <?php foreach($students as $student): ?>
-                        <option value="<?php echo $student['id']; ?>" 
-                            <?php echo ($grade['student_id'] == $student['id']); ?>>
-                            <?php echo $student['Name_student'] . ' ' . $student['Surname_student']; ?> 
-                            <?php echo $student['group_name']; ?>
+                        <option value="<?php echo htmlspecialchars($student['id']); ?>" 
+                            <?php echo htmlspecialchars(($grade['student_id'] == $student['id'])); ?>>
+                            <?php echo htmlspecialchars($student['Name_student'] . ' ' . $student['Surname_student']); ?> 
+                            <?php echo htmlspecialchars($student['group_name']); ?>
                         </option>
                     <?php endforeach; ?>
                 </select>
@@ -66,9 +66,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <select name="subject_id" class="form-select" required>
                     <option value="">-- Выберите предмет --</option>
                     <?php foreach($subjects as $subject): ?>
-                        <option value="<?php echo $subject['id']; ?>"
-                            <?php echo ($grade['subject_id'] == $subject['id']); ?>>
-                            <?php echo $subject['Name_subjects']; ?>
+                        <option value="<?php echo htmlspecialchars($subject['id']); ?>"
+                            <?php echo htmlspecialchars(($grade['subject_id'] == $subject['id'])); ?>>
+                            <?php echo htmlspecialchars($subject['Name_subjects']); ?>
                         </option>
                     <?php endforeach; ?>
                 </select>
@@ -79,16 +79,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <label for="grade" class="form-label">Оценка:</label>
                 <select name="grade" class="form-select" required>
                     <option value="">-- Выберите оценку --</option>
-                    <option value="5" <?php echo ($grade['grade'] == 5); ?>>5 - Отлично</option>
-                    <option value="4" <?php echo ($grade['grade'] == 4); ?>>4 - Хорошо</option>
-                    <option value="3" <?php echo ($grade['grade'] == 3); ?>>3 - Удовлетворительно</option>
-                    <option value="2" <?php echo ($grade['grade'] == 2); ?>>2 - Неудовлетворительно</option>
+                    <option value="5" <?php echo htmlspecialchars(($grade['grade'] == 5)); ?>>5 - Отлично</option>
+                    <option value="4" <?php echo htmlspecialchars(($grade['grade'] == 4)); ?>>4 - Хорошо</option>
+                    <option value="3" <?php echo htmlspecialchars(($grade['grade'] == 3)); ?>>3 - Удовлетворительно</option>
+                    <option value="2" <?php echo htmlspecialchars(($grade['grade'] == 2)); ?>>2 - Неудовлетворительно</option>
                 </select>
             </div>
             
             <div class="text-center">
                 <button type="submit" class="btn btn-warning">Изменить</button>
-                <a href="../Views/view.grades.student.php?id=<?php echo $grade['student_id']; ?>" class="btn btn-primary">Назад</a>
+                <a href="../Views/view.grades.student.php?id=<?php echo htmlspecialchars($grade['student_id']); ?>" class="btn btn-primary">Назад</a>
             </div>
         </form>
     </div>
