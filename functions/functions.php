@@ -234,3 +234,23 @@ function EditGrade($pdo, $data) {
         ':id' => $data['id']
     ]);
 }
+
+//Функция для расписания занятиц (где, какой учитель и т.д., также использую COUCAT <- для объеденения)
+function ShowSchedule($pdo){
+    $sql = 
+    "SELECT
+    groups.name AS Группа,
+    subjects.Name_subjects AS Предмет,
+    schedule.day_of_week AS День_недели,
+    CONCAT(teachers.Surname_teacher, ' ', teachers.Name_teacher) AS Учитель, 
+    schedule.lesson AS Номер_пары,
+    schedule.Cabinet AS Кабинет
+FROM schedule
+JOIN subjects ON schedule.subject_id = subjects.id
+JOIN groups ON schedule.group_id = groups.id
+LEFT JOIN teachers ON schedule.teacher_id = teachers.id";
+
+$statement = $pdo->prepare($sql);
+$statement->execute();
+return $statement->fetchAll(PDO::FETCH_ASSOC);
+}

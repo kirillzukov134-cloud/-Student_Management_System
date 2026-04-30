@@ -35,6 +35,10 @@ $students = selectIDCard($pdo);
             <a href="./Views/views_list_subjects.php" class="btn btn-info btn-lg">
             Список всех предметов
         </a>
+        </a>
+            <a href="./Views/view_schedule.php" class="btn btn-info btn-lg">
+            Просмотреть расписание пар
+        </a>
     </nav>
 </div>
 
