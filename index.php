@@ -13,8 +13,9 @@ $students = selectIDCard($pdo);
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
     <title>Главная страница</title>
 </head>
-<body>
-    <!-- Название проекта -->
+<body class="d-flex flex-column vh-100">
+
+<!-- Название проекта -->
 <div class="container mt-4">
     <div class="text-center">
         <h1 class="display-4">StudentProject</h1>
@@ -22,6 +23,14 @@ $students = selectIDCard($pdo);
         <hr class="my-4">
     </div>
 </div>
+
+<!-- Поиск -->
+<nav class="navbar navbar-light justify-content-end p-1">
+    <form class="d-flex">
+        <input class="form-control me-2" type="search" placeholder="Поиск" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Поиск</button>
+    </form>
+</nav>
 
 <!-- Навигационные кнопки -->
 <div class="d-flex justify-content-center gap-3 mb-4 " style="padding: 3px;">
@@ -63,18 +72,18 @@ $students = selectIDCard($pdo);
 </div>
 
 <!-- Нижний колонтитул с контактными данными -->
-<footer class="border-end">
-    <div class="container mt-3 col-md-4 position-absolute bottom-0 start-50 translate-middle-x">
-        <div class="row">
+<footer class="border-top py-3 bg-light mt-auto">
+    <div class="container">
+        <div class="row align-items-center">
             <div class="col-md-6">
-                <ul class="list-unstyled d-flex gap-3 mb-2">
+                <ul class="list-unstyled d-flex gap-3 mb-1">
                     <li><a href="#" class="text-decoration-none text-muted">Подробная информация о проекте</a></li>
                 </ul>
-                <p class="text-muted small">&copy; 2026 StudentProject</p>
+                <p class="text-muted small mb-0">&copy; 2026 StudentProject</p>
             </div>
             <div class="col-md-6 text-md-end">
                 <p class="mb-0">Телефон: +7 (999) 645-79-59</p>
-                <p>Email: <a href="kirillzukov134@gmail.com">kirillzukov134@gmail.com</a></p>
+                <p class="mb-0">Email: <a href="mailto:kirillzukov134@gmail.com">kirillzukov134@gmail.com</a></p>
             </div>
         </div>
     </div>

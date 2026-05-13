@@ -4,8 +4,10 @@ require "../Functions/functions.php";
 
 $student_id = $_GET['id'];
 
+
 $grades = GradesStudent($pdo, $student_id);
 $student = getStudentById($pdo, $student_id);
+var_dump($_GET);
 ?>
 
 <!DOCTYPE html>
@@ -14,7 +16,7 @@ $student = getStudentById($pdo, $student_id);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <title>Оценки студента: <?php echo htmlspecialchars($student['Name_student']); ?></title>
+    <title>Оценки студента</title>
 </head>
 <body>
     <div class="container mt-4 w-50 p-3 border border-dark" style="background-color: #eee;">

@@ -20,6 +20,7 @@ $students = selectFullStudents($pdo);
             <table class="table table-bordered table-striped", style="border: 5px;">
                 <thead class="table-dark">
                     <tr>
+                        <th>Группа</th>
                         <th>Имя_студента</th>
                         <th>Фамилия_студента</th>
                     </tr>
@@ -27,6 +28,7 @@ $students = selectFullStudents($pdo);
                 <tbody>
                     <?php foreach($students as $student): ?>
                     <tr>
+                        <td><?php echo htmlspecialchars($student['group_name']); ?></td>
                         <td><?php echo htmlspecialchars($student['first_name']); ?></td>
                         <td><?php echo htmlspecialchars($student['last_name']); ?></td>
                     </tr>
