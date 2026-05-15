@@ -11,12 +11,13 @@ $students = selectIDCard($pdo);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/main.css">
     <title>Главная страница</title>
 </head>
 <body class="d-flex flex-column vh-100">
 
 <!-- Название проекта -->
-<div class="container mt-4">
+<div id="name-project" class="container mt-4">
     <div class="text-center">
         <h1 class="display-4">StudentProject</h1>
         <p class="lead text-muted">Система управления студентами</p>
@@ -25,7 +26,7 @@ $students = selectIDCard($pdo);
 </div>
 
 <!-- Поиск -->
-<nav class="navbar navbar-light justify-content-end p-1">
+<nav class="navbar navbar-light justify-content-center p-1">
     <form class="d-flex">
         <input class="form-control me-2" type="search" placeholder="Поиск" aria-label="Search">
         <button class="btn btn-outline-success" type="submit">Поиск</button>
@@ -33,8 +34,8 @@ $students = selectIDCard($pdo);
 </nav>
 
 <!-- Навигационные кнопки -->
-<div class="d-flex justify-content-center gap-3 mb-4 " style="padding: 3px;">
-    <nav id="navbar-example2" class="navbar bg-body-tertiary px-3 mb-3">
+<div id="a-nav" class="d-flex justify-content-center gap-3 mb-4 " style="padding: 3px;">
+    <nav id="navbar-example2">
         <a href="./Views/view.all.students.php" class="btn btn-secondary btn-lg">
             Просмотреть список студентов
         </a>
@@ -52,7 +53,7 @@ $students = selectIDCard($pdo);
 </div>
 
 <!-- Карточки студентов -->
-<div class="container mt-4"> 
+<div id="card" class="container mt-4"> 
     <div class="row justify-content-center">
         <?php foreach($students as $student): ?>
             <div class="col-md-4 mb-3 d-flex justify-content-center">

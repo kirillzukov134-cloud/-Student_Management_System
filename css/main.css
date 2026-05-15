@@ -1,0 +1,26 @@
+.card {
+    border-radius: 10px;
+    transition: all 0.3s ease-out; 
+    box-shadow: 0 0 4px rgba(114, 111, 111, 0.5); 
+    background-color: #fff;
+}
+
+.card:hover {
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+    background-color: #f3f5f8; 
+    transform: scale(1.05);
+}
+
+.a-nav{
+    transition: all 0.4s ease-out;
+    box-shadow: 0 0 4px rgba(114, 111, 111, 0.5);
+}
+
+.a-nav:hover{
+        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+    background-color: #f3f5f8; 
+    transform: scale(1.05);
+}
+/* #name-project{
+    text-shadow: 5px 3px 3px rgb(168, 164, 164);
+} */
