@@ -10,46 +10,65 @@ $students = selectIDCard($pdo);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
-    <link rel="stylesheet" href="/css/main.css">
-    <title>Главная страница</title>
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous"> -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Symbols+Outlined" rel="stylesheet">
+    <link rel="stylesheet" href="./main.css">
+    <title>Student Management System</title>
 </head>
 <body class="d-flex flex-column vh-100">
 
 <!-- Название проекта -->
-<div id="name-project" class="container mt-4">
+<!-- <div id="name-project" class="container mt-4">
     <div class="text-center">
-        <h1 class="display-4">StudentProject</h1>
-        <p class="lead text-muted">Система управления студентами</p>
+        <h1 class="display-4">Student Management System</h1>
+        <p class="lead text-muted">Система управления данными студентов</p>
         <hr class="my-4">
     </div>
-</div>
+</div> -->
 
 <!-- Поиск -->
-<nav class="navbar navbar-light justify-content-center p-1">
+<!-- <nav class="navbar navbar-light justify-content-center p-1">
     <form class="d-flex">
         <input class="form-control me-2" type="search" placeholder="Поиск" aria-label="Search">
         <button class="btn btn-outline-success" type="submit">Поиск</button>
     </form>
-</nav>
+</nav> -->
 
-<!-- Навигационные кнопки -->
-<div id="a-nav" class="d-flex justify-content-center gap-3 mb-4 " style="padding: 3px;">
-    <nav id="navbar-example2">
-        <a href="./Views/view.all.students.php" class="btn btn-secondary btn-lg">
-            Просмотреть список студентов
-        </a>
-        <a href="./Adds/add.student.php" class="btn btn-success btn-lg">
-            Добавить студента
-        </a>
-            <a href="./Views/views_list_subjects.php" class="btn btn-info btn-lg">
-            Список всех предметов
-        </a>
-        </a>
-            <a href="./Views/view_schedule.php" class="btn btn-info btn-lg">
-            Просмотреть расписание пар
-        </a>
-    </nav>
+<div class="container">
+    <aside>
+        <div class="toggle">
+            <div class="logo">
+                <img src="./images/logo.png" alt="logo">
+                <h2>Studify</h2>
+            </div>
+        </div>
+        <div class="sidebar">
+            <a href="./Views/view.all.students.php">
+                <span class="material-symbols-outlined">
+                view_apps
+                </span> 
+                <h3>Просмотреть список студентов</h3>
+            </a>
+            <a href="./Adds/add.student.php">
+                <span class="material-symbols-outlined">
+                add_notes
+                </span>
+                <h3>Добавить студента</h3>
+            </a>
+            <a href="./Views/views_list_subjects.php">
+                <span class="material-symbols-outlined">
+                lists
+                </span>
+                <h3>Список всех предметов</h3>
+            </a>
+            <a href="./Views/view_schedule.php">
+                <span class="material-symbols-outlined">
+                schedule
+                </span>
+                <h3>Просмотреть расписание пар</h3>
+            </a>
+        </div>
+    </aside>
 </div>
 
 <!-- Карточки студентов -->
