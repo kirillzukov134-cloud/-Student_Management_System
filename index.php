@@ -34,77 +34,61 @@ $students = selectIDCard($pdo);
     </form>
 </nav> -->
 
-<div class="container">
-    <aside>
-        <div class="toggle">
-            <div class="logo">
-                <img src="./images/logo.png" alt="logo">
-                <h2>Studify</h2>
-            </div>
-        </div>
-        <div class="sidebar">
-            <a href="./Views/view.all.students.php">
-                <span class="material-symbols-outlined">
-                view_apps
-                </span> 
-                <h3>Просмотреть список студентов</h3>
-            </a>
-            <a href="./Adds/add.student.php">
-                <span class="material-symbols-outlined">
-                add_notes
-                </span>
-                <h3>Добавить студента</h3>
-            </a>
-            <a href="./Views/views_list_subjects.php">
-                <span class="material-symbols-outlined">
-                lists
-                </span>
-                <h3>Список всех предметов</h3>
-            </a>
-            <a href="./Views/view_schedule.php">
-                <span class="material-symbols-outlined">
-                schedule
-                </span>
-                <h3>Просмотреть расписание пар</h3>
-            </a>
-        </div>
-    </aside>
-</div>
 
-<!-- Карточки студентов -->
-<div id="card" class="container mt-4"> 
-    <div class="row justify-content-center">
+<header class="header">
+    <div class="logo">
+        <img src="./images/logo.png" alt="logo">
+        <h2>Studify</h2>
+    </div>
+</header>
+
+<div class="content">
+    <nav class="sidebar">
+        <a href="./Views/view.all.students.php">
+            <span class="material-symbols-outlined">view_apps</span> 
+            <h3>Список студентов</h3>
+        </a>
+        <a href="./Adds/add.student.php">
+            <span class="material-symbols-outlined">add_notes</span>
+            <h3>Добавить студента</h3>
+        </a>
+        <a href="./Views/views_list_subjects.php">
+            <span class="material-symbols-outlined">lists</span>
+            <h3>Все предметы</h3>
+        </a>
+        <a href="./Views/view_schedule.php">
+            <span class="material-symbols-outlined">schedule</span>
+            <h3>Расписание пар</h3>
+        </a>
+    </nav>
+
+    <!-- Карточки студентов -->
+    <div class="cards-grid">
         <?php foreach($students as $student): ?>
-            <div class="col-md-4 mb-3 d-flex justify-content-center">
-                <div class="card" style="width: 15rem;">
-                    <div class="card-body">
-                        <h5 class="card-title"><?php echo htmlspecialchars($student['first_name']) . ' ' . htmlspecialchars($student['last_name']); ?></h5>
-                        <p class="card-text">
-                            <p class="card-text">Группа: <?php echo htmlspecialchars($student['group_name']); ?></p>
-                        </p>
-                            <a href="./Views/view.details.student.php?id=<?php echo htmlspecialchars($student['id']); ?>" class="btn btn-primary">Подробнее</a>
-                            <a href="./Views/view.grades.student.php?id=<?php echo htmlspecialchars($student['id']); ?>" class="btn btn-primary">Оценки</a>                            
-                    </div>
+            <div class="student-card">
+                <h5><?php echo htmlspecialchars($student['first_name']) . ' ' . htmlspecialchars($student['last_name']); ?></h5>
+                <div class="group_info">
+                    <p>Группа: <?php echo htmlspecialchars($student['group_name']); ?></p>
+                </div>
+                <div class="card-actions">
+                    <a href="./Views/view.details.student.php?id=<?php echo $student['id']; ?>" class="btn btn-primary">Подробнее</a>
+                    <a href="./Views/view.grades.student.php?id=<?php echo $student['id']; ?>" class="btn btn-secondary">Оценки</a>
                 </div>
             </div>
         <?php endforeach; ?>
-    </div>    
+    </div>
 </div>
 
-<!-- Нижний колонтитул с контактными данными -->
-<footer class="border-top py-3 bg-light mt-auto">
-    <div class="container">
-        <div class="row align-items-center">
-            <div class="col-md-6">
-                <ul class="list-unstyled d-flex gap-3 mb-1">
-                    <li><a href="#" class="text-decoration-none text-muted">Подробная информация о проекте</a></li>
-                </ul>
-                <p class="text-muted small mb-0">&copy; 2026 StudentProject</p>
-            </div>
-            <div class="col-md-6 text-md-end">
-                <p class="mb-0">Телефон: +7 (999) 645-79-59</p>
-                <p class="mb-0">Email: <a href="mailto:kirillzukov134@gmail.com">kirillzukov134@gmail.com</a></p>
-            </div>
+<!-- Подвал -->
+<footer class="footer">
+    <div class="footer-container">
+        <ul class="footer-links">
+            <li><a href="#">Подробная информация о проекте</a></li>
+        </ul>
+        <div class="footer-info">
+            <p>&copy; 2026 StudentProject</p>
+            <p>Телефон: +7 (999) 645-79-59</p>
+            <p>Email: <a href="mailto:kirillzukov134@gmail.com">kirillzukov134@gmail.com</a></p>
         </div>
     </div>
 </footer>

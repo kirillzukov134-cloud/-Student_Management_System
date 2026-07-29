@@ -1,24 +1,34 @@
-*{
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
     margin: 0;
     padding: 0;
+    /* Убирает рамки (синие) */
     outline: 0;
-    appearance: 0;
-    border: 0;
-    text-decoration: none;
+    /* Убирает стандартные стили браузера  */
+    appearance: none;
+    font-family: 'Roboto', sans-serif ;
     box-sizing: border-box;
 }
 
-html{
-    font-size: 14px;
+a{
+    color: var(--color-dark);
+    text-decoration: none;
 }
 
-body{
-    width: 100vw;
-    height: 100vh;
-    font-family: 'Poppins', sans-serif;
+body {
+    width: 100px;
+    height: 100px;
 }
 
-aside .toggle .logo img{
-    width: 2rem;
-    height: 2rem;
+.logo img {
+    /* Ширина */
+    width: 3rem;
+    /* Высота */
+    height: 3rem;
+}
+
+.cards-grid{
+    display: grid;
+    margin-left: auto;
 }
