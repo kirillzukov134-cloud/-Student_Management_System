@@ -1,7 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
 * {
+    /*область отступа */
     margin: 0;
+    /* Отступы */
     padding: 0;
     /* Убирает рамки (синие) */
     outline: 0;
@@ -11,14 +13,19 @@
     box-sizing: border-box;
 }
 
-a{
+h2 {
+    font-size: 29px;
+}
+
+a {
     color: var(--color-dark);
     text-decoration: none;
 }
 
 body {
-    width: 100px;
-    height: 100px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 .logo img {
@@ -28,7 +35,37 @@ body {
     height: 3rem;
 }
 
-.cards-grid{
+/* Карточки студентов */
+.cards-grid {
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 18px;
+    justify-content: center;
+    gap: 20px;
+}
+
+.sidebar {
+    margin-top: 35px;
+}
+
+/* Шапка */
+/* .header{
+
+} */
+
+/* Шапка */
+.footer{
+    background: #f7f4f4;
+    padding: 10px;
+    margin-top: 50vh;
+}
+
+.footer-links{
+    font-size: 20px;
+}
+
+.footer-info{
+    margin: 10px;
     display: grid;
-    margin-left: auto;
+    font-size: 16px;
 }
