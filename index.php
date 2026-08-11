@@ -42,27 +42,29 @@ $students = selectIDCard($pdo);
     </div>
 </header>
 
-<div class="content">
-    <nav class="sidebar">
-        <a href="./Views/view.all.students.php">
-            <span class="material-symbols-outlined">view_apps</span> 
-            <h3>Список студентов</h3>
-        </a>
-        <a href="./Adds/add.student.php">
-            <span class="material-symbols-outlined">add_notes</span>
-            <h3>Добавить студента</h3>
-        </a>
-        <a href="./Views/views_list_subjects.php">
-            <span class="material-symbols-outlined">lists</span>
-            <h3>Все предметы</h3>
-        </a>
-        <a href="./Views/view_schedule.php">
-            <span class="material-symbols-outlined">schedule</span>
-            <h3>Расписание пар</h3>
-        </a>
-    </nav>
+<div class="main-container"> 
+    <nav class="sidebar"> 
+        <div class="item"> 
+            <i class="material-symbols-outlined">view_apps</i> 
+            <a href="./Views/view.all.students.php">Список студентов</a> 
+        </div> 
+        <div class="item"> 
+            <i class="material-symbols-outlined">add_notes</i> 
+            <a href="./Adds/add.student.php">Добавить студента</a> 
+        </div> 
+        <div class="item"> 
+            <i class="material-symbols-outlined">lists</i> 
+            <a href="./Adds/add.student.php">Все предметы</a> 
+        </div> 
+        <div class="item"> 
+            <i class="material-symbols-outlined">schedule</i> 
+            <a href="./Adds/add.student.php">Расписание пар</a> 
+        </div> 
+    </nav> 
 
-    <!-- Карточки студентов -->
+
+<!-- Карточки студентов -->
+<main class="content">
     <div class="cards-grid">
         <?php foreach($students as $student): ?>
             <div class="student-card">
@@ -77,7 +79,9 @@ $students = selectIDCard($pdo);
             </div>
         <?php endforeach; ?>
     </div>
+</main>
 </div>
+
 
 <!-- Подвал -->
 <footer class="footer">

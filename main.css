@@ -44,8 +44,29 @@ body {
     gap: 20px;
 }
 
-.sidebar {
-    margin-top: 35px;
+.sidebar{
+    flex: 1;
+    width: 185px;
+    padding: 6px;
+    margin-top: 23px;
+    border-radius: 10px;
+    background: #e0d7d7;
+}
+
+.item { 
+    display: flex; 
+    align-items: center; 
+    gap: 10px; 
+    font-size: 20px; 
+} 
+.item i {
+    font-size: 24px;
+    padding: 5px; 
+}
+
+.content {
+    flex: 8;
+    margin-top: 0;
 }
 
 /* Шапка */
