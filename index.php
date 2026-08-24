@@ -73,8 +73,11 @@ $students = selectIDCard($pdo);
                     <p>Группа: <?php echo htmlspecialchars($student['group_name']); ?></p>
                 </div>
                 <div class="card-actions">
-                    <a href="./Views/view.details.student.php?id=<?php echo $student['id']; ?>" class="btn btn-primary">Подробнее</a>
-                    <a href="./Views/view.grades.student.php?id=<?php echo $student['id']; ?>" class="btn btn-secondary">Оценки</a>
+                    <div class="btn">
+                        <a href="./Views/view.details.student.php?id=<?php echo $student['id']; ?>" class="btn btn-primary">Подробнее</a>
+                        <a href="./Views/view.grades.student.php?id=<?php echo $student['id']; ?>" class="btn btn-secondary">Оценки</a>
+                    </div>
+
                 </div>
             </div>
         <?php endforeach; ?>

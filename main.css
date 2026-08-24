@@ -26,6 +26,7 @@ body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    background: #f4f6f9;
 }
 
 .logo img {
@@ -39,13 +40,52 @@ body {
 .cards-grid {
     display: flex;
     flex-wrap: wrap;
-    font-size: 18px;
     justify-content: center;
     gap: 20px;
 }
 
+.student-card {
+    background: #eee8e8;
+    border-radius: 12px;
+    font-size: 22px;
+    padding: 22px;
+    text-align: center;
+    box-shadow: 0px 2px 10px rgba(219, 214, 214, 0.918);
+}
+
+.student-card .card-actions{
+    margin: 2px;
+    padding: 6px;
+    transition: all 0.3s ease;
+}
+
+.btn{
+    padding: 6px;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+.btn-primary {
+    background: #4a6cf7;
+    color: white;
+}
+
+.btn-primary:hover {
+    background: #052cc5;
+}
+
+.btn-secondary {
+    background: #444e5c;
+    color: white;
+}
+
+.btn-secondary:hover {
+    background: #212730;
+}
+
 .sidebar{
-    flex: 1;
     width: 185px;
     padding: 6px;
     margin-top: 23px;
@@ -53,6 +93,7 @@ body {
     background: #e0d7d7;
 }
 
+/* Кнопки переключения */
 .item { 
     display: flex; 
     align-items: center; 
@@ -78,7 +119,7 @@ body {
 .footer{
     background: #f7f4f4;
     padding: 10px;
-    margin-top: 50vh;
+    margin-top: auto;
 }
 
 .footer-links{
